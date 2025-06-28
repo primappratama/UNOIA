@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AuthButtonStyle">
+        <item name="android:layout_width">319dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="cornerRadius">5dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".LandPageActivity"
+    android:id="@+id/main">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="106dp" />
+
+    <TextView
+        android:id="@+id/tvTILAS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monumentextendedultrabold"
+        android:text="TILAS"
+        android:letterSpacing="0.3"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvIndonesia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/interregular"
+        android:text="Indonesia"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTILAS"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGoogle"
+        android:layout_width="319dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@android:color/white"
+        android:elevation="2dp"
+        android:text="Masuk lewat Google"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:cornerRadius="5dp"
+        app:icon="@drawable/ic_google"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconTint="@null"
+        app:layout_constraintTop_toBottomOf="@id/tvIndonesia"
+        android:layout_marginTop="345dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnApple"
+        android:layout_width="319dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@android:color/white"
+        android:elevation="2dp"
+        android:text="Masuk lewat Apple"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:cornerRadius="5dp"
+        app:icon="@drawable/ic_apple"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconTint="@null"
+        app:layout_constraintTop_toBottomOf="@id/btnGoogle"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAtau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="atau"
+        android:fontFamily="@font/interregular"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnApple"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignup"
+        android:layout_width="319dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_transparent"
+        android:text="Sign up dengan email"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnApple"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sudah punya account? Login"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnSignup"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"/>
+
+    <TextView
+        android:id="@+id/tvRegisterNanti"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register nanti"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnSignup"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
