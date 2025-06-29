@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".HomepageGuestActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="63dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="Cari items dan users"
+                    android:background="@drawable/bg_searchbar"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="8dp"
+                    android:paddingHorizontal="16dp"
+                    android:fontFamily="@font/interregular"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#99000000"
+                    android:textSize="14sp"
+                    android:inputType="text" />
+
+                <ImageView
+                    android:id="@+id/ivBag"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_bag"
+                    android:layout_marginStart="12dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Bag Icon"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="358dp"
+                android:layout_height="237dp"
+                android:layout_marginTop="18dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/blackop">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivHeart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_heart"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/monumentextendedultrabold"
+                        android:text="Gabung Yuk!"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sign in sekarang untuk simpan favoritmu dan dapatkan rekomendasi sesuai selera"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="9dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="17dp"
+                        app:cornerRadius="4dp"
+                        android:backgroundTint="@color/black"
+                        android:text="Sign in"
+                        android:fontFamily="@font/monumentextended" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recommended sellers"
+                android:textColor="@color/black"
+                android:fontFamily="@font/monumentextendedultrabold"
+                android:textSize="15sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="34dp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Seller Card 1 -->
+                    <LinearLayout
+                        android:id="@+id/sellercard1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="4dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@android:color/white"
+                        android:gravity="center_horizontal">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="224dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/item1"
+                                android:layout_width="111dp"
+                                android:layout_height="61dp"
+                                android:src="@drawable/item1"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/item2"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/item2"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/item1"
+                                app:layout_constraintBottom_toBottomOf="@id/item3"
+                                android:layout_marginLeft="5dp"/>
+
+                            <ImageView
+                                android:id="@+id/item3"
+                                android:layout_width="111dp"
+                                android:layout_height="61dp"
+                                android:src="@drawable/item3"
+                                android:scaleType="centerCrop"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintTop_toBottomOf="@id/item1"
+                                app:layout_constraintStart_toStartOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/profile"
+                            android:layout_marginTop="-24dp"
+                            android:scaleType="centerCrop"
+                            android:layout_marginBottom="4dp"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jzevanya"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:elevation="4dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@android:color/white"
+                        android:gravity="center_horizontal">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="224dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/item4"
+                                android:layout_width="111dp"
+                                android:layout_height="61dp"
+                                android:src="@drawable/item4"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/item5"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/item7"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/item4"
+                                app:layout_constraintBottom_toBottomOf="@id/item6"
+                                android:layout_marginLeft="5dp"/>
+
+                            <ImageView
+                                android:id="@+id/item6"
+                                android:layout_width="111dp"
+                                android:layout_height="61dp"
+                                android:src="@drawable/item6"
+                                android:scaleType="centerCrop"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintTop_toBottomOf="@id/item4"
+                                app:layout_constraintStart_toStartOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/profile"
+                            android:layout_marginTop="-24dp"
+                            android:scaleType="centerCrop"
+                            android:layout_marginBottom="4dp"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jzevanya"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </HorizontalScrollView>
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
