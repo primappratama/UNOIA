@@ -3,4 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blackop">#F5F5F5</color>
+    <color name="grey">#E6E6E6</color>
+    <color name="greySignup">#ACACAC</color>
+
 </resources>
