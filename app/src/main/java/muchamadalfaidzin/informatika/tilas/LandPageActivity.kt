@@ -2,11 +2,13 @@ package muchamadalfaidzin.informatika.tilas
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 
 class LandPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,13 @@ class LandPageActivity : AppCompatActivity() {
 
         tvLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnSignup = findViewById<Button>(R.id.btnSignup)
+
+        btnSignup.setOnClickListener{
+            val intent = Intent(this, SignupActivity::class.java )
             startActivity(intent)
         }
     }
