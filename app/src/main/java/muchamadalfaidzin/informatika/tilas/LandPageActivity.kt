@@ -27,12 +27,20 @@ class LandPageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val btnSignup = findViewById<Button>(R.id.btnSignup)
+        val tvRegisterNanti = findViewById<TextView>(R.id.tvRegisterNanti)
+
+        tvRegisterNanti.setOnClickListener{
+            val intent = Intent(this, HomepageGuestActivity::class.java )
+            startActivity(intent)
+        }
+
+        val btnSignup = findViewById<MaterialButton>(R.id.btnSignup)
 
         btnSignup.setOnClickListener{
             val intent = Intent(this, SignupActivity::class.java )
             startActivity(intent)
         }
+
     }
 
 }

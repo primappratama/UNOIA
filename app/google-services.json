@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "983437012173",
+    "project_id": "tilas-1b929",
+    "storage_bucket": "tilas-1b929.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983437012173:android:cdfe534108af492df50d84",
+        "android_client_info": {
+          "package_name": "muchamadalfaidzin.informatika.tilas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeS4QSIyhArlM7hD5eJwHhWpDCDN3zyU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
