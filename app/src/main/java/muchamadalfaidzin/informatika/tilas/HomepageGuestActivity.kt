@@ -7,8 +7,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import muchamadalfaidzin.informatika.tilas.adapter.SellerAdapter
-import muchamadalfaidzin.informatika.tilas.model.Seller
+import muchamadalfaidzin.informatika.tilas.adapter.ProductAdapter
+import muchamadalfaidzin.informatika.tilas.model.ProductItem
 
 class HomepageGuestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,14 +22,26 @@ class HomepageGuestActivity : AppCompatActivity() {
             insets
         }
 
-        val rvSellers = findViewById<RecyclerView>(R.id.rvSellers)
+        val recyclerView = findViewById<RecyclerView>(R.id.rvSellers)
 
-        val sellerList = listOf(
-            Seller(R.drawable.item1, R.drawable.item2, R.drawable.item3, R.drawable.profile, "Jzevanya"),
-            Seller(R.drawable.item4, R.drawable.item7, R.drawable.item6, R.drawable.profile, "Jzevanya")
+        val dataList = listOf(
+            ProductItem.Seller(
+                item1 = R.drawable.item1,
+                item2 = R.drawable.item2,
+                item3 = R.drawable.item3,
+                profileImage = R.drawable.profile,
+                name = "Jzevanya"
+            ),
+            ProductItem.Seller(
+                item1 = R.drawable.item4,
+                item2 = R.drawable.item7,
+                item3 = R.drawable.item6,
+                profileImage = R.drawable.profile,
+                name = "Store Lokal"
+            )
         )
 
-        rvSellers.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvSellers.adapter = SellerAdapter(sellerList)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.adapter = ProductAdapter(dataList, showSeller = true)
     }
 }
