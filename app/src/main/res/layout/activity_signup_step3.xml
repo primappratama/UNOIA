@@ -28,10 +28,10 @@
             android:layout_marginStart="17dp" />
 
         <TextView
-            android:id="@+id/tvSignup"
+            android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apa email kamu?"
+            android:text="Pilih Username "
             android:fontFamily="@font/monumentextendedultrabold"
             android:textColor="@color/black"
             android:textSize="23sp"
@@ -41,18 +41,16 @@
             android:layout_marginStart="17dp" />
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etUsername"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:hint="Email Address"
             android:fontFamily="@font/interregular"
-
             android:paddingHorizontal="16dp"
             android:textColor="@android:color/black"
             android:textColorHint="#888888"
             android:textSize="14sp"
             android:inputType="textEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/tvSignup"
+            app:layout_constraintTop_toBottomOf="@id/tvUsername"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="17dp"
@@ -60,14 +58,35 @@
             android:layout_marginTop="24dp" />
 
 
+        <ImageView
+            android:id="@+id/ivCheck"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_check_green"
+            android:contentDescription="Valid"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/etUsername"
+            app:layout_constraintBottom_toBottomOf="@id/etUsername" />
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hanya huruf dan angka yang di perbolehkan"
+            app:layout_constraintTop_toTopOf="@+id/etUsername"
+            app:layout_constraintStart_toStartOf="@id/etUsername"
+            android:fontFamily="@font/interregular"
+            android:textColor="@color/greytv"
+            android:layout_marginTop="44dp"
+            android:layout_marginStart="5dp"/>
 
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="361dp"
             android:layout_height="48dp"
-            android:id="@+id/btnSignup"
+            android:id="@+id/btnSignup3"
             app:cornerRadius="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

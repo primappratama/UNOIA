@@ -31,7 +31,7 @@
             android:id="@+id/tvSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apa email kamu?"
+            android:text="Siapa nama kamu ?"
             android:fontFamily="@font/monumentextendedultrabold"
             android:textColor="@color/black"
             android:textSize="23sp"
@@ -41,10 +41,10 @@
             android:layout_marginStart="17dp" />
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etNama"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:hint="Email Address"
+            android:hint="Nama Lengkap"
             android:fontFamily="@font/interregular"
 
             android:paddingHorizontal="16dp"
@@ -67,7 +67,7 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="361dp"
             android:layout_height="48dp"
-            android:id="@+id/btnSignup"
+            android:id="@+id/btnSignup2"
             app:cornerRadius="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

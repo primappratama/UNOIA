@@ -28,10 +28,10 @@
             android:layout_marginStart="17dp" />
 
         <TextView
-            android:id="@+id/tvSignup"
+            android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apa email kamu?"
+            android:text="Buat Password "
             android:fontFamily="@font/monumentextendedultrabold"
             android:textColor="@color/black"
             android:textSize="23sp"
@@ -41,18 +41,16 @@
             android:layout_marginStart="17dp" />
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etPassword"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:hint="Email Address"
             android:fontFamily="@font/interregular"
-
             android:paddingHorizontal="16dp"
             android:textColor="@android:color/black"
             android:textColorHint="#888888"
             android:textSize="14sp"
             android:inputType="textEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/tvSignup"
+            app:layout_constraintTop_toBottomOf="@id/tvUsername"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="17dp"
@@ -60,14 +58,55 @@
             android:layout_marginTop="24dp" />
 
 
+        <ImageView
+            android:id="@+id/ivTogglePassword"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="24dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_eye_closed"
+            android:contentDescription="Toggle Password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/etPassword" />
 
+        <TextView
+            android:id="@+id/tvMinLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="❌  Minimal 8 karakter"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/etPassword"
+            app:layout_constraintStart_toStartOf="@id/etPassword"
+            android:layout_marginTop="12dp" />
 
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="❌  Mengandung angka"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvMinLength"
+            app:layout_constraintStart_toStartOf="@id/etPassword"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvUppercase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="❌  Mengandung huruf besar"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvNumber"
+            app:layout_constraintStart_toStartOf="@id/etPassword"
+            android:layout_marginTop="4dp" />
 
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="361dp"
             android:layout_height="48dp"
-            android:id="@+id/btnSignup"
+            android:id="@+id/btnSignup3"
             app:cornerRadius="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
