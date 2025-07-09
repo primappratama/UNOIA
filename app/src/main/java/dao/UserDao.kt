@@ -16,4 +16,8 @@ interface UserDao {
 
     @Query("SELECT * FROM users")
     fun getAllUsers(): List<UserEntity>
+
+    @Query("SELECT * FROM users WHERE email = :email OR username = :username LIMIT 1")
+    fun checkUserExist(email: String, username: String): UserEntity?
+
 }
