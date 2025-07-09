@@ -33,36 +33,38 @@ class LandPageActivity : AppCompatActivity() {
             insets
         }
 
-        // ✅ Video background setup
         val videoView = findViewById<VideoView>(R.id.videoView)
         val videoUri = Uri.parse("android.resource://${packageName}/${R.raw.bgvideo}")
         videoView.setVideoURI(videoUri)
 
-// Menunggu video siap diputar
         videoView.setOnPreparedListener { mediaPlayer ->
             mediaPlayer.isLooping = true
-            mediaPlayer.setVolume(0f, 0f) // mute video
+            mediaPlayer.setVolume(0f, 0f)
 
-            // Mengatur ukuran video agar sesuai dengan layar perangkat
-            val videoWidth = mediaPlayer.videoWidth
-            val videoHeight = mediaPlayer.videoHeight
+            // Hitung skala dan sesuaikan ukuran
             val screenWidth = resources.displayMetrics.widthPixels
             val screenHeight = resources.displayMetrics.heightPixels
+            val videoWidth = mediaPlayer.videoWidth
+            val videoHeight = mediaPlayer.videoHeight
 
-            // Menyesuaikan skala video agar pas dengan layar
-            val scaleWidth = screenWidth.toFloat() / videoWidth
-            val scaleHeight = screenHeight.toFloat() / videoHeight
-            val scale = Math.max(scaleWidth, scaleHeight)
+            val scaleW = screenWidth.toFloat() / videoWidth
+            val scaleH = screenHeight.toFloat() / videoHeight
+            val scale = maxOf(scaleW, scaleH)
 
-            // Mengatur ukuran VideoView agar penuh tanpa crop
-            val layoutParams = videoView.layoutParams
-            layoutParams.width = (videoWidth * scale).toInt()
-            layoutParams.height = (videoHeight * scale).toInt()
-            videoView.layoutParams = layoutParams
+            val newWidth = (videoWidth * scale).toInt()
+            val newHeight = (videoHeight * scale).toInt()
+
+            val params = videoView.layoutParams
+            params.width = newWidth
+            params.height = newHeight
+            videoView.layoutParams = params
+
+            // Pusatkan video jika ukurannya lebih besar dari layar
+            videoView.translationX = ((screenWidth - newWidth) / 2f)
+            videoView.translationY = ((screenHeight - newHeight) / 2f)
+
+            videoView.start()
         }
-
-// Memulai video
-        videoView.start()
 
 
         // Google Sign-In config
