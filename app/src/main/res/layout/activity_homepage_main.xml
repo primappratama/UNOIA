@@ -10,6 +10,7 @@
     tools:context=".HomepageGuestActivity">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -22,65 +23,66 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="63dp"
                 android:layout_marginStart="13dp"
+                android:layout_marginTop="63dp"
                 android:layout_marginEnd="13dp"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/etSearch"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
-                    android:hint="Cari items dan users"
                     android:background="@drawable/bg_searchbar"
                     android:drawableStart="@drawable/ic_searchbar"
                     android:drawablePadding="8dp"
-                    android:paddingHorizontal="16dp"
                     android:fontFamily="@font/interregular"
+                    android:hint="Cari items dan users"
+                    android:inputType="text"
+                    android:paddingHorizontal="16dp"
                     android:textColor="@android:color/black"
                     android:textColorHint="#99000000"
-                    android:textSize="14sp"
-                    android:inputType="text" />
+                    android:textSize="14sp" />
 
                 <ImageView
                     android:id="@+id/ivBag"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_bag"
                     android:layout_marginStart="12dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="Bag Icon"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:src="@drawable/ic_bag" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/monumentextendedultrabold"
                 android:text="Welcome Kak 👋"
                 android:textColor="@color/black"
-                android:fontFamily="@font/monumentextendedultrabold"
-                android:textSize="15sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp" />
+                android:textSize="15sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/interregular"
                 android:text="Pelajari cara pakai TILAS!"
                 android:textColor="@color/black"
-                android:fontFamily="@font/interregular"
-                android:textSize="15sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="4dp" />
+                android:textSize="15sp" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:overScrollMode="never"
-                android:scrollbars="none"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                android:overScrollMode="never"
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -106,26 +108,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="48dp"
-                            android:text="Cara Berbelanja >"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="102dp"
                             android:clickable="true"
                             android:focusable="true"
+                            android:fontFamily="@font/interregular"
+                            android:text="Cara Berbelanja >"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:layout_marginTop="102dp"
-                            android:layout_marginLeft="14dp"
-                            android:fontFamily="@font/interregular"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="127dp"
+                            android:layout_marginBottom="18dp"
+                            android:fontFamily="@font/interregular"
                             android:text="Pelajari cara membeli di
                             TILAS "
                             android:textColor="@color/white"
-                            android:textSize="12sp"
-                            android:layout_marginTop="127dp"
-                            android:layout_marginLeft="14dp"
-                            android:layout_marginBottom="18dp"
-                            android:fontFamily="@font/interregular"/>
+                            android:textSize="12sp" />
                     </androidx.cardview.widget.CardView>
 
                     <!-- Card 2 -->
@@ -145,26 +147,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="48dp"
-                            android:text="Mulai Berjualan >"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="102dp"
                             android:clickable="true"
                             android:focusable="true"
+                            android:fontFamily="@font/interregular"
+                            android:text="Mulai Berjualan >"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:layout_marginTop="102dp"
-                            android:layout_marginLeft="14dp"
-                            android:fontFamily="@font/interregular"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="127dp"
+                            android:layout_marginBottom="18dp"
+                            android:fontFamily="@font/interregular"
                             android:text="Mulai kosongkan lemari
                                             pakaianmu"
                             android:textColor="@color/white"
-                            android:textSize="12sp"
-                            android:layout_marginTop="127dp"
-                            android:layout_marginLeft="14dp"
-                            android:layout_marginBottom="18dp"
-                            android:fontFamily="@font/interregular"/>
+                            android:textSize="12sp" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
             </HorizontalScrollView>
@@ -172,19 +174,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recommended for you"
-                android:textSize="15sp"
-                android:textColor="@color/black"
                 android:layout_marginLeft="19dp"
                 android:layout_marginTop="33dp"
-                android:fontFamily="@font/monumentextendedultrabold"/>
-
+                android:fontFamily="@font/monumentextendedultrabold"
+                android:text="Recommended for you"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
 
         </LinearLayout>
-
-
-
 
 
     </androidx.core.widget.NestedScrollView>
