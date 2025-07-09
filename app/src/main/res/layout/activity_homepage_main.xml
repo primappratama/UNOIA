@@ -180,9 +180,26 @@
                 android:text="Recommended for you"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
+                android:fontFamily="@font/monumentextendedultrabold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProducts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:clipToPadding="false" />
+
+
+
+
 
 
         </LinearLayout>
+
+
+
+
+
 
 
     </androidx.core.widget.NestedScrollView>

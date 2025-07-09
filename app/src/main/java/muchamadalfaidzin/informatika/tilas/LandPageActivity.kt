@@ -1,10 +1,12 @@
 package muchamadalfaidzin.informatika.tilas
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.VideoView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -31,11 +33,44 @@ class LandPageActivity : AppCompatActivity() {
             insets
         }
 
-        // Google Sign-In config (tanpa Firebase)
+        val videoView = findViewById<VideoView>(R.id.videoView)
+        val videoUri = Uri.parse("android.resource://${packageName}/${R.raw.bgvideo}")
+        videoView.setVideoURI(videoUri)
+
+        videoView.setOnPreparedListener { mediaPlayer ->
+            mediaPlayer.isLooping = true
+            mediaPlayer.setVolume(0f, 0f)
+
+            // Hitung skala dan sesuaikan ukuran
+            val screenWidth = resources.displayMetrics.widthPixels
+            val screenHeight = resources.displayMetrics.heightPixels
+            val videoWidth = mediaPlayer.videoWidth
+            val videoHeight = mediaPlayer.videoHeight
+
+            val scaleW = screenWidth.toFloat() / videoWidth
+            val scaleH = screenHeight.toFloat() / videoHeight
+            val scale = maxOf(scaleW, scaleH)
+
+            val newWidth = (videoWidth * scale).toInt()
+            val newHeight = (videoHeight * scale).toInt()
+
+            val params = videoView.layoutParams
+            params.width = newWidth
+            params.height = newHeight
+            videoView.layoutParams = params
+
+            // Pusatkan video jika ukurannya lebih besar dari layar
+            videoView.translationX = ((screenWidth - newWidth) / 2f)
+            videoView.translationY = ((screenHeight - newHeight) / 2f)
+
+            videoView.start()
+        }
+
+
+        // Google Sign-In config
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
-
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         // Tombol Google Login
@@ -44,17 +79,17 @@ class LandPageActivity : AppCompatActivity() {
             startActivityForResult(signInIntent, RC_SIGN_IN)
         }
 
-        // Email login
+        // Login Email
         findViewById<TextView>(R.id.tvLogin).setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
-        // Lewati
+        // Lewati ke Guest
         findViewById<TextView>(R.id.tvRegisterNanti).setOnClickListener {
             startActivity(Intent(this, HomepageGuestActivity::class.java))
         }
 
-        // Signup
+        // Daftar
         findViewById<Button>(R.id.btnSignup).setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }

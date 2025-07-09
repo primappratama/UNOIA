@@ -7,8 +7,10 @@ import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.material.button.MaterialButton
 
 class SignupStep4Activity : AppCompatActivity() {
 
@@ -20,12 +22,15 @@ class SignupStep4Activity : AppCompatActivity() {
 
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val ivToggle = findViewById<ImageView>(R.id.ivTogglePassword)
-
         val tvMinLength = findViewById<TextView>(R.id.tvMinLength)
         val tvNumber = findViewById<TextView>(R.id.tvNumber)
         val tvUppercase = findViewById<TextView>(R.id.tvUppercase)
+        val btnContinue = findViewById<MaterialButton>(R.id.btnSignup3)
 
-        // Show/Hide password
+        // Tombol awal nonaktif
+        btnContinue.isEnabled = false
+
+        // Show/hide password
         ivToggle.setOnClickListener {
             if (isPasswordVisible) {
                 etPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
@@ -38,41 +43,68 @@ class SignupStep4Activity : AppCompatActivity() {
             isPasswordVisible = !isPasswordVisible
         }
 
-        // Password Validation
+        // Validasi password
         etPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val password = s.toString()
 
-                // 1. Minimal 8 karakter
+                val checkIcon = ContextCompat.getDrawable(this@SignupStep4Activity, R.drawable.ic_check)
+                val closeIcon = ContextCompat.getDrawable(this@SignupStep4Activity, R.drawable.ic_close)
+
+                var isValidLength = false
+                var hasNumber = false
+                var hasUpper = false
+
+                // Minimal 8 karakter
                 if (password.length >= 8) {
-                    tvMinLength.text = "✅ Minimal 8 karakter"
+                    isValidLength = true
                     tvMinLength.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.green))
+                    tvMinLength.setCompoundDrawablesWithIntrinsicBounds(checkIcon, null, null, null)
                 } else {
-                    tvMinLength.text = "❌ Minimal 8 karakter"
                     tvMinLength.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.grey))
+                    tvMinLength.setCompoundDrawablesWithIntrinsicBounds(closeIcon, null, null, null)
                 }
 
-                // 2. Mengandung angka
+                // Mengandung angka
                 if (password.any { it.isDigit() }) {
-                    tvNumber.text = "✅ Mengandung angka"
+                    hasNumber = true
                     tvNumber.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.green))
+                    tvNumber.setCompoundDrawablesWithIntrinsicBounds(checkIcon, null, null, null)
                 } else {
-                    tvNumber.text = "❌ Mengandung angka"
                     tvNumber.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.grey))
+                    tvNumber.setCompoundDrawablesWithIntrinsicBounds(closeIcon, null, null, null)
                 }
 
-                // 3. Mengandung huruf besar
+                // Mengandung huruf besar
                 if (password.any { it.isUpperCase() }) {
-                    tvUppercase.text = "✅ Mengandung huruf besar"
+                    hasUpper = true
                     tvUppercase.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.green))
+                    tvUppercase.setCompoundDrawablesWithIntrinsicBounds(checkIcon, null, null, null)
                 } else {
-                    tvUppercase.text = "❌ Mengandung huruf besar"
                     tvUppercase.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.grey))
+                    tvUppercase.setCompoundDrawablesWithIntrinsicBounds(closeIcon, null, null, null)
+                }
+
+                // Jika semua valid, aktifkan tombol
+                if (isValidLength && hasNumber && hasUpper) {
+                    btnContinue.isEnabled = true
+                    btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this@SignupStep4Activity, android.R.color.black))
+                    btnContinue.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, android.R.color.white))
+                } else {
+                    btnContinue.isEnabled = false
+                    btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this@SignupStep4Activity, R.color.grey))
+                    btnContinue.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.greySignup))
                 }
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+
+        // Aksi tombol Continue
+        btnContinue.setOnClickListener {
+            Toast.makeText(this, "Password valid, lanjut ke step berikutnya!", Toast.LENGTH_SHORT).show()
+            // startActivity(Intent(this, SignupStep5Activity::class.java))
+        }
     }
 }
