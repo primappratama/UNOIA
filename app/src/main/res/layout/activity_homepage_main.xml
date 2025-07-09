@@ -179,9 +179,20 @@
                 android:layout_marginTop="33dp"
                 android:fontFamily="@font/monumentextendedultrabold"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                />
+
+
+
 
 
         </LinearLayout>
+
+
 
 
 
