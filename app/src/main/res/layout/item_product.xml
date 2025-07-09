@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/tools"
     android:layout_margin="8dp">
 
-    <!-- Layout untuk Produk Biasa -->
+    <!-- Produk biasa -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardProduct"
         android:layout_width="match_parent"
@@ -55,7 +54,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Layout untuk Seller -->
+    <!-- Seller -->
     <LinearLayout
         android:id="@+id/layoutSeller"
         android:layout_width="wrap_content"
@@ -63,43 +62,46 @@
         android:orientation="vertical"
         android:padding="8dp"
         android:elevation="4dp"
-        android:layout_marginEnd="12dp"
         android:background="@android:color/white"
         android:gravity="center_horizontal"
         android:visibility="gone">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="224dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
 
-            <ImageView
-                android:id="@+id/item1"
+            <!-- Kiri -->
+            <LinearLayout
                 android:layout_width="111dp"
-                android:layout_height="61dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="2dp">
 
+                <ImageView
+                    android:id="@+id/item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="4dp"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+
+            <!-- Kanan -->
             <ImageView
                 android:id="@+id/item2"
                 android:layout_width="110dp"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:layout_marginLeft="5dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/item1"
-                app:layout_constraintBottom_toBottomOf="@id/item3" />
+                android:scaleType="centerCrop" />
+        </LinearLayout>
 
-            <ImageView
-                android:id="@+id/item3"
-                android:layout_width="111dp"
-                android:layout_height="61dp"
-                android:scaleType="centerCrop"
-                android:layout_marginTop="4dp"
-                app:layout_constraintTop_toBottomOf="@id/item1"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <!-- Profil -->
         <ImageView
             android:id="@+id/ivProfile"
             android:layout_width="48dp"
@@ -108,7 +110,8 @@
             android:layout_marginBottom="4dp"
             android:scaleType="centerCrop"
             android:clipToOutline="true"
-            android:outlineProvider="background" />
+            android:outlineProvider="background"
+            android:background="@drawable/circle_white" />
 
         <TextView
             android:id="@+id/tvSellerName"
@@ -118,5 +121,29 @@
             android:textStyle="bold"
             android:textSize="14sp" />
     </LinearLayout>
+
+    <!-- CardView Tambahan -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardExtra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="2dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textExtra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="Konten tambahan di sini"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

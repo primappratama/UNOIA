@@ -12,6 +12,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
         android:fillViewport="true">
 
         <LinearLayout
@@ -91,15 +92,18 @@
                         android:layout_height="wrap_content"
                         android:text="Sign in sekarang untuk simpan favoritmu dan dapatkan rekomendasi sesuai selera"
                         android:gravity="center_horizontal"
+                        android:textColor="@color/black"
                         android:layout_marginTop="9dp" />
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSignin"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:layout_marginTop="17dp"
                         app:cornerRadius="4dp"
                         android:backgroundTint="@color/black"
                         android:text="Sign in"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/monumentextended" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -175,7 +179,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Kaos Jersey 66" />
+                            android:text="Kaos Jersey 66"
+                            android:textColor="@color/black"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -321,7 +326,9 @@
                             android:layout_height="24dp"
                             android:src="@drawable/heart"
                             android:background="@null"
-                            android:layout_gravity="end" />
+                            android:layout_gravity="end"
+                            />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -342,10 +349,13 @@
         android:layout_gravity="bottom"
         android:background="@color/white"
         app:menu="@menu/bottom_nav_menu"
+        app:itemIconSize="24dp"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
         app:itemTextAppearanceActive="@style/BottomNavText"
-        app:itemIconSize="25dp"
-        app:labelVisibilityMode="labeled"/>
+        app:itemTextAppearanceInactive="@style/BottomNavText"
+        app:labelVisibilityMode="labeled" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,5 +1,6 @@
 package muchamadalfaidzin.informatika.tilas
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 import muchamadalfaidzin.informatika.tilas.adapter.ProductAdapter
 import muchamadalfaidzin.informatika.tilas.model.ProductItem
 
@@ -43,5 +45,13 @@ class HomepageGuestActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = ProductAdapter(dataList, showSeller = true)
+
+        val btnSignin = findViewById<MaterialButton>(R.id.btnSignin)
+
+        btnSignin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
