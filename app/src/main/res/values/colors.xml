@@ -8,5 +8,6 @@
     <color name="black30">#B3B3B3</color>
     <color name="blackTextDisable">#888888</color> <!-- untuk teks disable -->
     <color name="gray_e6">#E6E6E6</color>
-
+    <color name="greytv">#9F9F9F</color>
+    <color name="green">#4CAF50</color>
 </resources>
