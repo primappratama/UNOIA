@@ -1,5 +1,6 @@
 package muchamadalfaidzin.informatika.tilas
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -103,8 +104,39 @@ class SignupStep4Activity : AppCompatActivity() {
 
         // Aksi tombol Continue
         btnContinue.setOnClickListener {
-            Toast.makeText(this, "Password valid, lanjut ke step berikutnya!", Toast.LENGTH_SHORT).show()
-            // startActivity(Intent(this, SignupStep5Activity::class.java))
+            val email = intent.getStringExtra("email") ?: ""
+            val name = intent.getStringExtra("name") ?: ""
+            val username = intent.getStringExtra("username") ?: ""
+            val password = etPassword.text.toString()
+
+            val db = Database.AppDatabase.getInstance(this)
+            val userDao = db.userDao()
+
+            Thread {
+                val existingUser = userDao.checkUserExist(email, username)
+                if (existingUser != null) {
+                    runOnUiThread {
+                        Toast.makeText(this, "Email atau Username sudah digunakan", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    val newUser = entity.UserEntity(
+                        nama = name,
+                        username = username,
+                        email = email,
+                        password = password
+                    )
+
+                    userDao.insertUser(newUser)
+
+                    runOnUiThread {
+                        Toast.makeText(this, "Anda Berhasil Membuat Akun!", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+            }.start()
         }
+
     }
 }
