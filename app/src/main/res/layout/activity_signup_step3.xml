@@ -91,7 +91,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="54dp"
+            android:layout_marginBottom="15dp"
             android:text="Continue"
             android:textColor="@color/greySignup"
             android:backgroundTint="@color/grey"

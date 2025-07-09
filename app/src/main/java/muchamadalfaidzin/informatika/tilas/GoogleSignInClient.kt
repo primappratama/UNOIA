@@ -1,0 +1,3 @@
+package muchamadalfaidzin.informatika.tilas
+
+annotation class GoogleSignInClient
