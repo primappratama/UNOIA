@@ -1,8 +1,11 @@
 package muchamadalfaidzin.informatika.tilas
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import muchamadalfaidzin.informatika.tilas.databinding.ActivityForgotBinding
@@ -37,5 +40,17 @@ class ForgotActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+
+        val btnReset = findViewById<Button>(R.id.btnReset)
+
+        btnReset.setOnClickListener {
+            Toast.makeText(this, "Password telah berhasil reset", Toast.LENGTH_SHORT).show()
+
+
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
     }
 }
