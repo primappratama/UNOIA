@@ -7,7 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import muchamadalfaidzin.informatika.tilas.model.ProductAdapter
+import muchamadalfaidzin.informatika.tilas.adapter.ProductAdapter
 import muchamadalfaidzin.informatika.tilas.model.ProductItem
 
 class HomepageGuestActivity : AppCompatActivity() {
@@ -22,21 +22,9 @@ class HomepageGuestActivity : AppCompatActivity() {
             insets
         }
 
-        val recyclerView = findViewById<RecyclerView>(R.id.rvSellers) // Gunakan ID yang sama
+        val recyclerView = findViewById<RecyclerView>(R.id.rvSellers)
 
         val dataList = listOf(
-            ProductItem.Product(
-                imageRes = R.drawable.vansblack,
-                name = "Vans Black Hi",
-                price = "Rp 1.000.000",
-                size = "41"
-            ),
-            ProductItem.Product(
-                imageRes = R.drawable.vans_backpack,
-                name = "Vans OFF The Walls",
-                price = "Rp 4.500.000",
-                size = "41"
-            ),
             ProductItem.Seller(
                 item1 = R.drawable.item1,
                 item2 = R.drawable.item2,
@@ -54,6 +42,6 @@ class HomepageGuestActivity : AppCompatActivity() {
         )
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView.adapter = ProductAdapter(dataList)
+        recyclerView.adapter = ProductAdapter(dataList, showSeller = true)
     }
 }
