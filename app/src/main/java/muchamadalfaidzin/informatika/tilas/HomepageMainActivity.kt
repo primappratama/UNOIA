@@ -27,10 +27,27 @@ class HomepageMainActivity : AppCompatActivity() {
                 price = "Rp 4.500.000",
                 size = "41"
             ),
-            // Tambahkan produk lainnya sesuai kebutuhan
+            ProductItem.Product(
+                imageRes = R.drawable.sepatu,
+                name = "Air Court 1 Retro",
+                price = "Rp 3.700.000",
+                size = "42"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.jacket,
+                name = "Stussy Jacket",
+                price = "Rp 1.990.000",
+                size = "XL"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.kaos_66,
+                name = "Kaos Jersey 66",
+                price = "Rp 1.200.000",
+                size = "L"
+            )
         )
 
         recyclerView.layoutManager = GridLayoutManager(this, 2)
-        recyclerView.adapter = ProductAdapter(productList, showSeller = false)
+        recyclerView.adapter = ProductAdapter(productList, showSeller = false) // <== INI YANG BELUM ADA
     }
 }
