@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="muchamadalfaidzin.informatika.tilas" />
-                  <option name="mobileSdkAppId" value="1:983437012173:android:cdfe534108af492df50d84" />
-                  <option name="projectId" value="tilas-1b929" />
-                  <option name="projectNumber" value="983437012173" />
+                  <option name="appId" value="PLACEHOLDER" />
+                  <option name="mobileSdkAppId" value="" />
+                  <option name="projectId" value="" />
+                  <option name="projectNumber" value="" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
