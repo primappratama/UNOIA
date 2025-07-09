@@ -43,31 +43,40 @@ class SignupStep4Activity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 val password = s.toString()
 
+                val checkIcon = ContextCompat.getDrawable(this@SignupStep4Activity, R.drawable.ic_check)
+                val closeIcon = ContextCompat.getDrawable(this@SignupStep4Activity, R.drawable.ic_close)
+
                 // 1. Minimal 8 karakter
                 if (password.length >= 8) {
-                    tvMinLength.text = "✅ Minimal 8 karakter"
+                    tvMinLength.text = "Minimal 8 karakter"
                     tvMinLength.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.green))
+                    tvMinLength.setCompoundDrawablesWithIntrinsicBounds(checkIcon, null, null, null)
                 } else {
-                    tvMinLength.text = "❌ Minimal 8 karakter"
+                    tvMinLength.text = "Minimal 8 karakter"
                     tvMinLength.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.grey))
+                    tvMinLength.setCompoundDrawablesWithIntrinsicBounds(closeIcon, null, null, null)
                 }
 
                 // 2. Mengandung angka
                 if (password.any { it.isDigit() }) {
-                    tvNumber.text = "✅ Mengandung angka"
+                    tvNumber.text = "Mengandung angka"
                     tvNumber.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.green))
+                    tvNumber.setCompoundDrawablesWithIntrinsicBounds(checkIcon, null, null, null)
                 } else {
-                    tvNumber.text = "❌ Mengandung angka"
+                    tvNumber.text = "Mengandung angka"
                     tvNumber.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.grey))
+                    tvNumber.setCompoundDrawablesWithIntrinsicBounds(closeIcon, null, null, null)
                 }
 
                 // 3. Mengandung huruf besar
                 if (password.any { it.isUpperCase() }) {
-                    tvUppercase.text = "✅ Mengandung huruf besar"
+                    tvUppercase.text = "Mengandung huruf besar"
                     tvUppercase.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.green))
+                    tvUppercase.setCompoundDrawablesWithIntrinsicBounds(checkIcon, null, null, null)
                 } else {
-                    tvUppercase.text = "❌ Mengandung huruf besar"
+                    tvUppercase.text = "Mengandung huruf besar"
                     tvUppercase.setTextColor(ContextCompat.getColor(this@SignupStep4Activity, R.color.grey))
+                    tvUppercase.setCompoundDrawablesWithIntrinsicBounds(closeIcon, null, null, null)
                 }
             }
 
