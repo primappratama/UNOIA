@@ -37,7 +37,7 @@ class HomepageGuestActivity : AppCompatActivity() {
                 item1Res = R.drawable.item4,
                 item2Res = R.drawable.item7,
                 item3Res = R.drawable.item6,
-                profileRes = R.drawable.profile,
+                profileRes = R.drawable.profile1,
                 sellerName = "Eienorion"
             )
         )
