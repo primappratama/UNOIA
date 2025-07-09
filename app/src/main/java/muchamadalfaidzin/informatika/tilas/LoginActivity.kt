@@ -34,5 +34,12 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, HomepageGuestActivity::class.java)
             startActivity(intent)
         }
+
+        val tvLupaPassword = findViewById<TextView>(R.id.tvLupapassword)
+
+        tvLupaPassword.setOnClickListener {
+            val intent = Intent(this, ForgotActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
