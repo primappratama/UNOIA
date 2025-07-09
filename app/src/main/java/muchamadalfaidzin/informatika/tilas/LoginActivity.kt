@@ -35,10 +35,12 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, LandPageActivity::class.java))
         }
 
+        // ✅ Menangani klik "Lupa Password"
         tvLupaPassword.setOnClickListener {
             startActivity(Intent(this, ForgotActivity::class.java))
         }
 
+        // ✅ Proses login
         btnLogin.setOnClickListener {
             val inputUser = etUsername.text.toString().trim()
             val inputPassword = etPassword.text.toString().trim()

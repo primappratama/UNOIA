@@ -37,7 +37,7 @@ class HomepageGuestActivity : AppCompatActivity() {
                 item2 = R.drawable.item7,
                 item3 = R.drawable.item6,
                 profileImage = R.drawable.profile,
-                name = "Store Lokal"
+                name = "Eienorion"
             )
         )
 
