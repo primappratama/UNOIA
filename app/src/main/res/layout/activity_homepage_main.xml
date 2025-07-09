@@ -180,14 +180,19 @@
                 android:text="Recommended for you"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
-                android:fontFamily="@font/monumentextendedultrabold"/>
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvProducts"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:clipToPadding="false" />
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                android:paddingTop="8dp"
+                android:paddingBottom="120dp"
+            android:overScrollMode="never"/>
+
+
 
 
 
