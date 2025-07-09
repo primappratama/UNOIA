@@ -15,4 +15,14 @@ sealed class ProductItem {
         val profileImage: Int,
         val name: String
     ) : ProductItem()
+
+    data class HorizontalSection(
+        val products: List<Product>
+    ) : ProductItem()
+
+
 }
+
+
+
+

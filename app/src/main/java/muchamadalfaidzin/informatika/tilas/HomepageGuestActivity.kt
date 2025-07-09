@@ -6,10 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
+import muchamadalfaidzin.informatika.tilas.adapter.ProductAdapter
 import muchamadalfaidzin.informatika.tilas.adapter.SellerAdapter
+import muchamadalfaidzin.informatika.tilas.model.ProductItem
 import muchamadalfaidzin.informatika.tilas.model.SellerItem
 
 class HomepageGuestActivity : AppCompatActivity() {
@@ -37,10 +40,48 @@ class HomepageGuestActivity : AppCompatActivity() {
                 item1Res = R.drawable.item4,
                 item2Res = R.drawable.item7,
                 item3Res = R.drawable.item6,
-                profileRes = R.drawable.profile,
+                profileRes = R.drawable.ellie,
                 sellerName = "Eienorion"
             )
         )
+
+        val productList = listOf(
+            ProductItem.Product(
+                imageRes = R.drawable.vansblack,
+                name = "Vans Black Hi",
+                price = "Rp 1.000.000",
+                size = "41"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.vans_backpack,
+                name = "Vans OFF The Walls",
+                price = "Rp 4.500.000",
+                size = "41"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.sepatu,
+                name = "Air Court 1 Retro",
+                price = "Rp 3.700.000",
+                size = "42"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.jacket,
+                name = "Stussy Jacket",
+                price = "Rp 1.990.000",
+                size = "XL"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.kaos_66,
+                name = "Kaos Jersey 66",
+                price = "Rp 1.200.000",
+                size = "L"
+            )
+        )
+
+        val rvProducts = findViewById<RecyclerView>(R.id.rvProducts)
+        rvProducts.layoutManager = GridLayoutManager(this, 2)
+        rvProducts.adapter = ProductAdapter(productList, showSeller = false)
+
 
         val recyclerView = findViewById<RecyclerView>(R.id.rvSellers)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)

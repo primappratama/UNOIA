@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import muchamadalfaidzin.informatika.tilas.R
 import muchamadalfaidzin.informatika.tilas.model.ProductItem
@@ -18,12 +19,14 @@ class ProductAdapter(
     companion object {
         private const val TYPE_PRODUCT = 0
         private const val TYPE_SELLER = 1
+        private const val TYPE_HORIZONTAL = 2
     }
 
     override fun getItemViewType(position: Int): Int {
         return when (items[position]) {
             is ProductItem.Product -> TYPE_PRODUCT
             is ProductItem.Seller -> TYPE_SELLER
+            is ProductItem.HorizontalSection -> TYPE_HORIZONTAL
         }
     }
 
@@ -39,6 +42,11 @@ class ProductAdapter(
                     .inflate(R.layout.item_seller, parent, false)
                 SellerViewHolder(view)
             }
+            TYPE_HORIZONTAL -> {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.activity_homepage_main, parent, false)
+                HorizontalSectionViewHolder(view)
+            }
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
@@ -48,11 +56,8 @@ class ProductAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (val item = items[position]) {
             is ProductItem.Product -> (holder as ProductViewHolder).bind(item)
-            is ProductItem.Seller -> {
-                if (showSeller) {
-                    (holder as SellerViewHolder).bind(item)
-                }
-            }
+            is ProductItem.Seller -> if (showSeller) (holder as SellerViewHolder).bind(item)
+            is ProductItem.HorizontalSection -> (holder as HorizontalSectionViewHolder).bind(item.products)
         }
     }
 
@@ -85,5 +90,39 @@ class ProductAdapter(
             ivProfile.setImageResource(seller.profileImage)
             tvSellerName.text = seller.name
         }
+    }
+
+    inner class HorizontalSectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val rvHorizontal: RecyclerView = itemView.findViewById(R.id.rvProductsHorizontal)
+
+        fun bind(products: List<ProductItem.Product>) {
+            rvHorizontal.layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
+            rvHorizontal.adapter = HorizontalAdapter(products)
+        }
+    }
+
+    inner class HorizontalAdapter(private val products: List<ProductItem.Product>) : RecyclerView.Adapter<HorizontalAdapter.HorizontalViewHolder>() {
+        inner class HorizontalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            private val image: ImageView = itemView.findViewById(R.id.barang1)
+            private val price: TextView = itemView.findViewById(R.id.tvHarga)
+            private val title: TextView = itemView.findViewById(R.id.tvJudul)
+
+            fun bind(product: ProductItem.Product) {
+                image.setImageResource(product.imageRes)
+                price.text = product.price
+                title.text = product.name
+            }
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorizontalViewHolder {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_product_horizontal, parent, false)
+            return HorizontalViewHolder(view)
+        }
+
+        override fun onBindViewHolder(holder: HorizontalViewHolder, position: Int) {
+            holder.bind(products[position])
+        }
+
+        override fun getItemCount(): Int = products.size
     }
 }
