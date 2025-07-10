@@ -42,6 +42,13 @@ class HomepageGuestActivity : AppCompatActivity() {
                 item3Res = R.drawable.item6,
                 profileRes = R.drawable.ellie,
                 sellerName = "Eienorion"
+            ),
+            SellerItem(
+                item1Res = R.drawable.item8,
+                item2Res = R.drawable.item9,
+                item3Res = R.drawable.item10,
+                profileRes = R.drawable.hanni,
+                sellerName = "HanniPham"
             )
         )
 
@@ -75,6 +82,24 @@ class HomepageGuestActivity : AppCompatActivity() {
                 name = "Kaos Jersey 66",
                 price = "Rp 1.200.000",
                 size = "L"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.adidas,
+                name = "Adidas x Oasis",
+                price = "Rp 1.600.000",
+                size = "L"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.adidas_shoes,
+                name = "Adidas Shoes X Oasis",
+                price = "Rp 1.900.000",
+                size = "45"
+            ),
+            ProductItem.Product(
+                imageRes = R.drawable.converse,
+                name = "Converse Chuck 70 Hi",
+                price = "Rp 1.100.000",
+                size = "42"
             )
         )
 
