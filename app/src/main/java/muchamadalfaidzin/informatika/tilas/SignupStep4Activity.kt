@@ -137,6 +137,11 @@ class SignupStep4Activity : AppCompatActivity() {
                 }
             }.start()
         }
+        val btnBackSignup = findViewById<ImageView>(R.id.btnBackSignup)
+        btnBackSignup.setOnClickListener {
+            val intent = Intent(this, SignupStep3Activity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
