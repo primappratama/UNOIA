@@ -1,10 +1,12 @@
 package muchamadalfaidzin.informatika.tilas
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import muchamadalfaidzin.informatika.tilas.adapter.ProductAdapter
 import muchamadalfaidzin.informatika.tilas.adapter.ProductHorizontalAdapter
 import muchamadalfaidzin.informatika.tilas.adapter.SellerAdapter
@@ -97,5 +99,24 @@ class HomepageMainActivity : AppCompatActivity() {
         val rvSellers = findViewById<RecyclerView>(R.id.rvSellers)
         rvSellers.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvSellers.adapter = SellerAdapter(sellerList)
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    // Sudah di homepage, tidak perlu pindah
+                    true
+                }
+
+                R.id.nav_profile -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
-}
+    }
+

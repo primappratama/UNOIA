@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import muchamadalfaidzin.informatika.tilas.adapter.ProductAdapter
 import muchamadalfaidzin.informatika.tilas.adapter.SellerAdapter
@@ -116,5 +117,22 @@ class HomepageGuestActivity : AppCompatActivity() {
         btnSignin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.selectedItemId = R.id.nav_home // tandai home aktif
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_profile -> {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(0, 0) // hilangkan animasi transisi (opsional)
+                    true
+                }
+                R.id.nav_home -> true // tetap di HomePageGuest
+                else -> false
+            }
+        }
+
     }
 }
