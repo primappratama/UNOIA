@@ -11,18 +11,23 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        // Delay splash selama 2 detik
         Handler(Looper.getMainLooper()).postDelayed({
             val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
-            val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
+
+            // ✅ Cek apakah sudah login berdasarkan data SharedPreferences
+            val isLoggedIn = sharedPref.contains("username") && sharedPref.contains("user_id")
 
             if (isLoggedIn) {
-                // Sudah login → langsung ke Homepage
+                // Sudah login → langsung ke homepage
                 startActivity(Intent(this, HomepageMainActivity::class.java))
             } else {
                 // Belum login → ke LandPage
                 startActivity(Intent(this, LandPageActivity::class.java))
             }
+
+            // Selesai splash
             finish()
-        }, 2000) // 2 detik splash delay
+        }, 2000) // 2 detik
     }
 }
