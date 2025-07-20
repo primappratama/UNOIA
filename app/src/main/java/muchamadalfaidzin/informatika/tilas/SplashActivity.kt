@@ -12,9 +12,17 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            // Ganti ke activity utama kamu, misalnya LandPageActivity
-            startActivity(Intent(this, LandPageActivity::class.java))
+            val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
+            val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
+
+            if (isLoggedIn) {
+                // Sudah login → langsung ke Homepage
+                startActivity(Intent(this, HomepageMainActivity::class.java))
+            } else {
+                // Belum login → ke LandPage
+                startActivity(Intent(this, LandPageActivity::class.java))
+            }
             finish()
-        }, 2000) // 2000 ms = 2 detik
+        }, 2000) // 2 detik splash delay
     }
 }
