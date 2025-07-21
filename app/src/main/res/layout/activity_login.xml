@@ -79,25 +79,6 @@
             android:layout_marginEnd="13dp"
             android:layout_marginTop="24dp" />
 
-        <EditText
-            android:hint="Password"
-            android:fontFamily="@font/interregular"
-            android:background="@drawable/bg_transparent"
-            android:paddingHorizontal="16dp"
-            android:paddingStart="2dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="#888888"
-            android:textSize="14sp"
-            android:inputType="textPassword"
-            android:importantForAutofill="yes"
-            android:autofillHints="password"
-            app:layout_constraintTop_toBottomOf="@id/etUsername"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="17dp"
-            android:layout_marginTop="20dp" />
-
         <LinearLayout
             android:id="@+id/btnLupaPassword"
             android:layout_width="wrap_content"
