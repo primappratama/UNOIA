@@ -2,6 +2,7 @@ package muchamadalfaidzin.informatika.tilas
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -76,6 +77,13 @@ class HomepageGuestActivity : AppCompatActivity() {
 
         findViewById<LinearLayout>(R.id.nav_cart).setOnClickListener {
             startActivity(Intent(this, LandPageActivity::class.java))
+        }
+
+        val ivToLogin = findViewById<ImageView>(R.id.ivToLogin)
+
+        ivToLogin.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 }

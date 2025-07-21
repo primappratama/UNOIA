@@ -48,6 +48,9 @@
                 android:background="@drawable/foto1">
 
                 <ImageView
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/ivToLogin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
