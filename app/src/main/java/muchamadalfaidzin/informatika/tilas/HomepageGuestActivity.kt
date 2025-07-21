@@ -2,6 +2,7 @@ package muchamadalfaidzin.informatika.tilas
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -55,5 +56,26 @@ class HomepageGuestActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.rvCollections)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.adapter = SelectedCollectionAdapter(collectionList)
+
+        // ======== Bottom Navigation with Intents ========
+        findViewById<LinearLayout>(R.id.nav_home).setOnClickListener {
+            startActivity(Intent(this, HomepageMainActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.nav_search).setOnClickListener {
+            startActivity(Intent(this, LandPageActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.nav_favorite).setOnClickListener {
+            startActivity(Intent(this, LandPageActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.nav_profile).setOnClickListener {
+            startActivity(Intent(this, LandPageActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.nav_cart).setOnClickListener {
+            startActivity(Intent(this, LandPageActivity::class.java))
+        }
     }
 }
