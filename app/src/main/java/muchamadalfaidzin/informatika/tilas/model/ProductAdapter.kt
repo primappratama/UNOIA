@@ -1,3 +1,4 @@
+/*
 package muchamadalfaidzin.informatika.tilas.adapter
 
 import android.view.LayoutInflater
@@ -125,4 +126,4 @@ class ProductAdapter(
 
         override fun getItemCount(): Int = products.size
     }
-}
+}*/

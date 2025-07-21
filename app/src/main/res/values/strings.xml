@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">TILAS</string>
     <string name="default_web_client_id">543268600996-iftt7rsl2b3p6vpcqe9kt29u085tap4r.apps.googleusercontent.com</string>
+    <string name="register_later"><u>Register Later</u></string>
 
 </resources>

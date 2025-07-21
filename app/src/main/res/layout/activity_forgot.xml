@@ -20,21 +20,22 @@
             android:layout_height="50dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="12dp"
-            android:src="@drawable/backbutton"
+            android:src="@drawable/arrow_left"
             android:contentDescription="Back"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="65dp"
-            android:layout_marginStart="0dp" />
+            android:layout_marginStart="3dp" />
 
         <TextView
             android:id="@+id/tvFpassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/monumentextendedultrabold"
+            android:fontFamily="@font/monumentextended_regular"
             android:text="Forgot password"
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="17dp"
+            android:textSize="13.5dp"
             app:layout_constraintBottom_toBottomOf="@+id/btnBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.339"
@@ -45,9 +46,10 @@
             android:id="@+id/textView"
             android:layout_width="333dp"
             android:layout_height="45dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/inter_medium"
-            android:text="Masukkan email atau username kamu untuk dapatkan link reset password di inbox"
+            android:text="TYPE YOUR EMAIL OR USERNAME AND WE’LL SEND YOU A PASSWORD RESET LINK"
+            android:textSize="11dp"
             android:textColor="@color/black30"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.205"
@@ -56,50 +58,37 @@
 
         <EditText
             android:id="@+id/etUsername"
-            android:layout_width="360dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="15dp"
-            android:autofillHints=""
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/inter_medium"
-            android:hint="Username or email"
-            android:inputType="textEmailAddress"
-            android:paddingHorizontal="16dp"
-            android:paddingStart="2dp"
-            android:paddingBottom="1dp"
+            android:hint="USERNAME OR EMAIL"
+            android:fontFamily="@font/helvetica_light"
+            android:paddingHorizontal="4dp"
             android:textColor="@android:color/black"
             android:textColorHint="#888888"
-            android:textSize="14sp"
+            android:textSize="13sp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/textView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <View
-            android:layout_width="370dp"
-            android:layout_height="0.8dp"
-            android:background="#888888"
-            app:layout_constraintTop_toBottomOf="@id/etUsername"
-            app:layout_constraintStart_toStartOf="@id/etUsername"
-            android:layout_marginTop="4dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginTop="3dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnReset"
             android:layout_width="361dp"
             android:layout_height="48dp"
             android:text="Reset Password"
+            android:textAllCaps="true"
             android:enabled="false"
             android:textColor="@color/blackTextDisable"
             android:backgroundTint="#E6E6E6"
-            android:fontFamily="@font/monumentextendedultrabold"
+            android:fontFamily="@font/monumentextended_regular"
             app:cornerRadius="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="0dp" />
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
