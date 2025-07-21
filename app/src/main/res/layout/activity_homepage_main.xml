@@ -92,7 +92,7 @@
                     android:textAllCaps="true"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/tvViewAllNewArrival"
@@ -139,10 +139,6 @@
                 android:clipToPadding="false"
                 android:overScrollMode="never"/>
 
-
-<<<<<<< HEAD
-
-=======
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvProducts"
                 android:layout_width="match_parent"
@@ -152,7 +148,6 @@
                 android:paddingTop="8dp"
                 android:paddingBottom="80dp"
                 android:overScrollMode="never"/>
->>>>>>> 69cba69b49969add8ed2e6e406c343aff1f5e869
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

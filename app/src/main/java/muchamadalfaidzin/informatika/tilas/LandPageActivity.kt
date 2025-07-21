@@ -15,6 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import androidx.core.net.toUri
 
 class LandPageActivity : AppCompatActivity() {
 
@@ -23,6 +24,15 @@ class LandPageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
+        val username = sharedPref.getString("username", null)
+
+        if (username != null) {
+            startActivity(Intent(this, HomepageMainActivity::class.java))
+            finish()
+        }
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_page)
 
@@ -34,7 +44,7 @@ class LandPageActivity : AppCompatActivity() {
         }
 
         val videoView = findViewById<VideoView>(R.id.videoView)
-        val videoUri = Uri.parse("android.resource://${packageName}/${R.raw.bgvideo}")
+        val videoUri = "android.resource://${packageName}/${R.raw.bgvideo}".toUri()
         videoView.setVideoURI(videoUri)
 
         videoView.setOnPreparedListener { mediaPlayer ->

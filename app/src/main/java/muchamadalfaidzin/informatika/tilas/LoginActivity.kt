@@ -16,8 +16,19 @@ import Database.AppDatabase
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
+        val username = sharedPref.getString("username", null)
+
+        if (username != null) {
+            startActivity(Intent(this, HomepageMainActivity::class.java))
+            finish()
+            return
+        }
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -48,6 +59,23 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // ✅ Login Hardcoded Admin (Optional)
+            if (inputUser == "admin" && inputPassword == "admin") {
+                val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
+                with(sharedPref.edit()) {
+                    putString("username", "admin")
+                    putString("nama", "Administrator")
+                    putInt("user_id", 0)
+                    apply()
+                }
+
+                Toast.makeText(this, "Login sebagai admin berhasil", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, HomepageMainActivity::class.java))
+                finish()
+                return@setOnClickListener
+            }
+
+            // ✅ Login via Database
             val db = AppDatabase.getInstance(this)
             val userDao = db.userDao()
 
@@ -55,7 +83,6 @@ class LoginActivity : AppCompatActivity() {
                 val user = userDao.login(inputUser, inputPassword)
                 runOnUiThread {
                     if (user != null) {
-                        // ✅ Simpan data login ke SharedPreferences
                         val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
                         with(sharedPref.edit()) {
                             putString("username", user.username)
@@ -73,5 +100,6 @@ class LoginActivity : AppCompatActivity() {
                 }
             }.start()
         }
+
     }
 }
