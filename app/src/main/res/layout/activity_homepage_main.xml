@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:fitsSystemWindows="true"
     tools:context=".HomepageGuestActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -139,7 +140,19 @@
                 android:overScrollMode="never"/>
 
 
+<<<<<<< HEAD
 
+=======
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                android:paddingTop="8dp"
+                android:paddingBottom="80dp"
+                android:overScrollMode="never"/>
+>>>>>>> 69cba69b49969add8ed2e6e406c343aff1f5e869
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

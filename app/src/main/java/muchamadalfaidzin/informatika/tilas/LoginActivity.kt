@@ -35,12 +35,10 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, LandPageActivity::class.java))
         }
 
-        // ✅ Menangani klik "Lupa Password"
         tvLupaPassword.setOnClickListener {
             startActivity(Intent(this, ForgotActivity::class.java))
         }
 
-        // ✅ Proses login
         btnLogin.setOnClickListener {
             val inputUser = etUsername.text.toString().trim()
             val inputPassword = etPassword.text.toString().trim()
@@ -57,6 +55,15 @@ class LoginActivity : AppCompatActivity() {
                 val user = userDao.login(inputUser, inputPassword)
                 runOnUiThread {
                     if (user != null) {
+                        // ✅ Simpan data login ke SharedPreferences
+                        val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
+                        with(sharedPref.edit()) {
+                            putString("username", user.username)
+                            putString("nama", user.nama)
+                            putInt("user_id", user.id)
+                            apply()
+                        }
+
                         Toast.makeText(this, "Login berhasil, selamat datang ${user.nama}", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, HomepageMainActivity::class.java))
                         finish()
