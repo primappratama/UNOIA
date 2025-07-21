@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -20,43 +18,80 @@ class ForgotActivity : AppCompatActivity() {
         binding = ActivityForgotBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.etUsername.addTextChangedListener(object : TextWatcher {
+        setupViews()
+    }
+
+    private fun setupViews() {
+        // Set up back button
+        binding.btnBack.setOnClickListener {
+            navigateToLogin()
+        }
+
+        // Set up text watcher for username/email field
+        binding.etUsername.addTextChangedListener(createTextWatcher())
+
+        // Set up reset password button
+        binding.btnReset.setOnClickListener {
+            resetPassword()
+        }
+
+        // Initially disable the reset button
+        updateResetButtonState(false)
+    }
+
+    private fun createTextWatcher(): TextWatcher {
+        return object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val isNotEmpty = s.toString().trim().isNotEmpty()
-                binding.btnReset.isEnabled = isNotEmpty
-                binding.btnReset.setBackgroundTintList(
-                    ContextCompat.getColorStateList(
-                        this@ForgotActivity,
-                        if (isNotEmpty) R.color.black else R.color.gray_e6
-                    )
-                )
-                binding.btnReset.setTextColor(
-                    ContextCompat.getColor(
-                        this@ForgotActivity,
-                        if (isNotEmpty) R.color.white else R.color.black30
-                    )
-                )
+                updateResetButtonState(isNotEmpty)
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-        })
-
-        val btnReset = findViewById<Button>(R.id.btnReset)
-
-        btnReset.setOnClickListener {
-            Toast.makeText(this, "Password telah berhasil reset", Toast.LENGTH_SHORT).show()
-
-
-            val intent = Intent(this, LoginActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
         }
-        val btnBack = findViewById<ImageView>(R.id.btnBackSignup)
-        btnBack.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+    }
+
+    private fun updateResetButtonState(isEnabled: Boolean) {
+        binding.btnReset.isEnabled = isEnabled
+        binding.btnReset.setBackgroundTintList(
+            ContextCompat.getColorStateList(
+                this,
+                if (isEnabled) R.color.black else R.color.gray_e6
+            )
+        )
+        binding.btnReset.setTextColor(
+            ContextCompat.getColor(
+                this,
+                if (isEnabled) R.color.white else R.color.black30
+            )
+        )
+    }
+
+    private fun resetPassword() {
+        val usernameOrEmail = binding.etUsername.text.toString().trim()
+
+        // Validasi sederhana
+        if (usernameOrEmail.isEmpty()) {
+            binding.etUsername.error = "Masukkan username atau email"
+            return
         }
 
+        // Di sini biasanya akan ada logika untuk mengirim email reset password
+        // Untuk sekarang kita hanya menampilkan toast dan navigasi ke login
+
+        Toast.makeText(
+            this,
+            "Instruksi reset password telah dikirim ke email Anda",
+            Toast.LENGTH_LONG
+        ).show()
+
+        navigateToLogin()
+    }
+
+    private fun navigateToLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
