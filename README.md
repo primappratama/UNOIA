@@ -27,10 +27,10 @@ This project was created for a university assignment in Mobile Application Devel
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/eienorion/TILAS.git
+   git clone https://github.com/primappratama/UNOIA.git
 
 Note
 This project is still under development and mainly focused on the user interface (UI). Backend and database features like login, register, cart, etc. will be added later if needed.
 
 Author
-Created by @eienorion for university coursework.
+Created by @eienorion @primappratama for university coursework.
