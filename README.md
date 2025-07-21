@@ -2,15 +2,15 @@
 ![Welcome](showtime.jpg)
 
 
-# TILAS (Thrift in Love and Stuff)
+# UNOIA
 
-**TILAS** is a mobile application built for Android using Kotlin. The purpose of this app is to create a space for users to browse, buy, and sell second-hand items (thrift) and promote local products or artworks.
+**UNOIA** is a mobile application built for Android using Kotlin. The purpose of this app is to create a platform for users to explore and express their style and identity through fashion, as part of UNOIA a clothing brand that started as a college project and grew into a creative movement.
 
 This project was created for a university assignment in Mobile Application Development.
 
 ## Features
 
-- Home screen with recommended sellers and hot items
+- Home screen
 - Product listings with images and prices
 - Basic navigation using BottomNavigationView
 - Search bar and shopping bag icon
