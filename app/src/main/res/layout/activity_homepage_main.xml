@@ -156,7 +156,7 @@
         android:elevation="8dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="12dp"
-        app:cardElevation="8dp"
+        app:cardElevation="3dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true">
 
