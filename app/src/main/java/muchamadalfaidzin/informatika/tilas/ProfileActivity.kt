@@ -37,6 +37,14 @@ class ProfileActivity : AppCompatActivity() {
         }
         tvUsername.text = "Welcome, $username"
 
+        val settingsMenu = findViewById<TextView>(R.id.menu_settings)
+
+        settingsMenu.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+
         // ======== Bottom Navigation with Intents ========
         findViewById<LinearLayout>(R.id.nav_home)?.setOnClickListener {
             startActivity(Intent(this, HomepageMainActivity::class.java))
