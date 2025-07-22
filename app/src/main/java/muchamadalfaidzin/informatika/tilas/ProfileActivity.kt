@@ -3,6 +3,7 @@ package muchamadalfaidzin.informatika.tilas
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,20 +30,6 @@ class ProfileActivity : AppCompatActivity() {
         val tvUsername = findViewById<TextView>(R.id.tvUsername)
         tvUsername.text = username
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNavigationView.selectedItemId = R.id.nav_profile
-
-        bottomNavigationView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    startActivity(Intent(this, HomepageMainActivity::class.java))
-                    overridePendingTransition(0, 0)
-                    true
-                }
-                R.id.nav_profile -> true
-                else -> false
-            }
-        }
 
         val tvLogout = findViewById<TextView>(R.id.tvLogout)
         tvLogout.setOnClickListener {
@@ -62,6 +49,26 @@ class ProfileActivity : AppCompatActivity() {
                 }
                 .setNegativeButton("Batal", null)
                 .show()
+        }
+
+        findViewById<LinearLayout>(R.id.nav_home).setOnClickListener {
+            startActivity(Intent(this, HomepageMainActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.nav_search).setOnClickListener {
+            startActivity(Intent(this, LandPageActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.nav_favorite).setOnClickListener {
+            startActivity(Intent(this, LandPageActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.nav_profile).setOnClickListener {
+            startActivity(Intent(this, LandPageActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.nav_cart).setOnClickListener {
+            startActivity(Intent(this, LandPageActivity::class.java))
         }
     }
 }
