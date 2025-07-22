@@ -16,14 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
-        android:layout_marginTop="56dp"
         android:src="@drawable/models2" />
 
     <LinearLayout
         android:id="@+id/profile_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="359dp"
+        android:layout_marginTop="300dp"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -98,7 +97,7 @@
         android:elevation="8dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
+        app:cardElevation="2dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true">
 
@@ -207,11 +206,6 @@
                     android:layout_marginBottom="4dp"
                     android:src="@drawable/handbag"
                     app:tint="@color/black" />
-
-                <TextView
-                    android:id="@+id/tvLogout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
             </LinearLayout>
 
         </LinearLayout>
