@@ -165,7 +165,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/heart_01active"
+                    android:src="@drawable/heart2"
                     app:tint="@color/black" />
             </LinearLayout>
 
