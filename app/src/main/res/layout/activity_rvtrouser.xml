@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/main"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivCollectionImage"
+            android:layout_width="196.5dp"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop" />
+
+        <ImageButton
+            android:id="@+id/btnLove"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_love"
+            android:contentDescription="Favorite" />
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TOUSER"
+        android:textSize="10dp"
+        android:fontFamily="@font/helvetica_bold"
+        android:paddingBottom="0dp"
+        android:paddingTop="4dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="4dp"/>
+
+    <TextView
+        android:id="@+id/tvHarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monumentextended_regular"
+        android:padding="4dp"
+        android:text=""
+        android:textSize="8sp"
+        android:paddingTop="0dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="4dp"
+        android:layout_marginBottom="12dp"/>
+</LinearLayout>
