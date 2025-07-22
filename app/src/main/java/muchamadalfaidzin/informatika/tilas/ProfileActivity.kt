@@ -28,7 +28,8 @@ class ProfileActivity : AppCompatActivity() {
 
         // Tampilkan nama akun
         val tvUsername = findViewById<TextView>(R.id.tvUsername)
-        tvUsername.text = username
+        tvUsername.text = "Welcome, $username"
+
 
 
         val tvLogout = findViewById<TextView>(R.id.tvLogout)
