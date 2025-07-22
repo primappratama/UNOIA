@@ -74,7 +74,10 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:fontFamily="@font/monumentextended_regular"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground" />
 
         <TextView
             android:id="@+id/menu_orders"
