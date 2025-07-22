@@ -26,7 +26,7 @@
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity"
+            android:name=".ShoppingBagActivity"
             android:exported="false" />
         <activity
             android:name=".FavoriteActivity"
