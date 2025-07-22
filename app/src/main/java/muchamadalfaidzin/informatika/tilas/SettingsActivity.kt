@@ -22,19 +22,15 @@ class SettingsActivity : AppCompatActivity() {
         // Tombol Sign Out
         val btnSignOut = findViewById<TextView>(R.id.btnSignOut)
         btnSignOut.setOnClickListener {
-            // Logout Firebase (kalau pakai)
-            /*FirebaseAuth.getInstance().signOut()*/
+            // clear session
+            val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
+            sharedPref.edit().clear().apply()
 
-            // Bersihin session lokal kalau ada (misal pakai SharedPreferences)
-            val sharedPref = getSharedPreferences("UserSession", MODE_PRIVATE)
-            val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
-
-            if (isLoggedIn) {
-                startActivity(Intent(this, HomepageMainActivity::class.java))
-            } else {
-                startActivity(Intent(this, LandPageActivity::class.java))
-            }
+            // balik ke LandPage
+            val intent = Intent(this, LandPageActivity::class.java)
+            startActivity(intent)
             finish()
         }
+
     }
 }
