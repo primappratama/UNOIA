@@ -9,26 +9,26 @@ import androidx.recyclerview.widget.RecyclerView
 import muchamadalfaidzin.informatika.tilas.model.CollectionAdapter.CollectionAdapter
 import muchamadalfaidzin.informatika.tilas.model.CollectionItem
 
-class ShirtBlousesActivity : AppCompatActivity() {
+class JeansActivity : AppCompatActivity() {
 
-    private lateinit var rvShirtBlouses: RecyclerView
+    private lateinit var rvjeans: RecyclerView
     private lateinit var adapter: CollectionAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shirt_blouses)
+        setContentView(R.layout.activity_jeans)
 
-        rvShirtBlouses = findViewById(R.id.rvShirtBlouses)
+        rvjeans= findViewById(R.id.rvjeans)
 
         val list = listOf(
-            CollectionItem(R.drawable.shirt1, "SHIRT & BLOUSES", "Rp199.000"),
-            CollectionItem(R.drawable.shirt2, "CASUAL BLOUSE", "Rp259.000"),
-            CollectionItem(R.drawable.shirt1, "FORMAL BLOUSE", "Rp299.000")
+            CollectionItem(R.drawable.shirt1, "SKINNY JEANS", "Rp349.000"),
+            CollectionItem(R.drawable.shirt2, "HIGH-WAIST JEANS", "Rp399.000"),
+            CollectionItem(R.drawable.shirt1, "RELAXED FIT JEANS", "Rp319.000")
         )
 
         adapter = CollectionAdapter(list)
-        rvShirtBlouses.layoutManager = GridLayoutManager(this, 2)
-        rvShirtBlouses.adapter = adapter
+        rvjeans.layoutManager = GridLayoutManager(this, 2)
+        rvjeans.adapter = adapter
 
         val btnBack = findViewById<ImageView>(R.id.btnBack)
         btnBack.setOnClickListener {

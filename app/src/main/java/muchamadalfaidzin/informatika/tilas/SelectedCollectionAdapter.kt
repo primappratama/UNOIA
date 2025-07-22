@@ -1,5 +1,6 @@
 package muchamadalfaidzin.informatika.tilas
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,26 @@ class SelectedCollectionAdapter(private val collectionList: List<CollectionItem>
         holder.ivImage.setImageResource(item.imageResId)
         holder.tvTitle.text = item.title
         holder.tvExplore.text = item.subtitle
-    }
 
+        // Klik item
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+
+            when (item.title) {
+                "SHIRT & BLOUSES" -> {
+                    val intent = Intent(context, ShirtBlousesActivity::class.java)
+                    intent.putExtra("title", item.title)
+                    intent.putExtra("imageResId", item.imageResId)
+                    context.startActivity(intent)
+                }
+                "JEANS" -> {
+                    val intent = Intent(context, JeansActivity::class.java)
+                    intent.putExtra("title", item.title)
+                    intent.putExtra("imageResId", item.imageResId)
+                    context.startActivity(intent)
+                }
+                // Tambahkan else if lain di sini jika kamu ingin jenis koleksi lain dibuka ke activity berbeda
+            }
+        }
+    }
 }
