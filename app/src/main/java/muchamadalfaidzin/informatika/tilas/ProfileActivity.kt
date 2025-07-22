@@ -37,6 +37,14 @@ class ProfileActivity : AppCompatActivity() {
         }
         tvUsername.text = "Welcome, $username"
 
+        val settingsMenu = findViewById<TextView>(R.id.menu_settings)
+
+        settingsMenu.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+
         // ======== Bottom Navigation with Intents ========
         findViewById<LinearLayout>(R.id.nav_home)?.setOnClickListener {
             startActivity(Intent(this, HomepageMainActivity::class.java))
@@ -59,24 +67,6 @@ class ProfileActivity : AppCompatActivity() {
         }
 
 
-        /*val tvLogout = findViewById<TextView>(R.id.tvLogout)
-        tvLogout?.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Apakah anda yakin ingin keluar?")
-                .setPositiveButton("OK") { _, _ ->
-                    with(sharedPref.edit()) {
-                        clear()
-                        apply()
-                    }
 
-                    val intent = Intent(this, LandPageActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
-                    finish()
-                }
-                .setNegativeButton("Batal", null)
-                .show()
-        }*/
     }
 }

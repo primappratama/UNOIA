@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:id="@+id/main"
     android:fitsSystemWindows="true"
-    tools:context=".ShirtBlousesActivity">
+    tools:context=".TrousersActivity">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:text="SHIRT &amp; BLOUSES"
+                android:text="TROUSER"
                 android:layout_marginStart="17dp"
                 android:layout_marginBottom="29dp"
                 android:textSize="24sp"
@@ -49,7 +49,7 @@
                 android:textColor="@color/black"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvShirtBlouses"
+                android:id="@+id/rvtrouser"
                 android:layout_width="411dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"

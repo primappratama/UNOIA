@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:text="SHIRT &amp; BLOUSES"
+                android:text="BEST PRICE"
                 android:layout_marginStart="17dp"
                 android:layout_marginBottom="29dp"
                 android:textSize="24sp"
@@ -49,14 +49,15 @@
                 android:textColor="@color/black"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvShirtBlouses"
-                android:layout_width="411dp"
+                android:id="@+id/rvbestprice"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
                 android:overScrollMode="never"
-                android:paddingStart="16dp" />
+                android:padding="0dp"
+                android:layout_margin="0dp"
+                android:paddingStart="16dp"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

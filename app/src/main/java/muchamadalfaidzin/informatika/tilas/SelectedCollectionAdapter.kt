@@ -49,8 +49,21 @@ class SelectedCollectionAdapter(private val collectionList: List<CollectionItem>
                     intent.putExtra("imageResId", item.imageResId)
                     context.startActivity(intent)
                 }
-                // Tambahkan else if lain di sini jika kamu ingin jenis koleksi lain dibuka ke activity berbeda
+                "TROUSERS" -> {
+                    val intent = Intent(context, TrousersActivity::class.java)
+                    intent.putExtra("title", item.title)
+                    intent.putExtra("imageResId", item.imageResId)
+                    context.startActivity(intent)
+                }
+                "BEST PRICE" -> {
+                    val intent = Intent(context, BestPriceActivity::class.java)
+                    intent.putExtra("title", item.title)
+                    intent.putExtra("imageResId", item.imageResId)
+                    context.startActivity(intent)
+                }
+                // Tambahkan koleksi lainnya di sini jika perlu
             }
         }
+
     }
 }

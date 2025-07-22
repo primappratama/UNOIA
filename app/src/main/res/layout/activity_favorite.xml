@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context=".SearchActivity">
+    tools:context=".FavoriteActivity">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/favoriteView"
@@ -36,6 +36,15 @@
                 android:fontFamily="@font/monumentextended_regular"
                 android:textColor="@color/black"
                 android:layout_marginBottom="16dp" />
+
+            <!-- Tambahkan setelah tv_fav_title -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFavorites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:visibility="visible" />
+
 
             <!-- Subjudul -->
             <TextView

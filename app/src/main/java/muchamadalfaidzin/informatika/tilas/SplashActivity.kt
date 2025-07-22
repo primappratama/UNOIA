@@ -12,9 +12,8 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
-
-            val isLoggedIn = sharedPref.contains("username") && sharedPref.contains("user_id")
+            val sharedPref = getSharedPreferences("tilas_pref", MODE_PRIVATE)
+            val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
 
             if (isLoggedIn) {
                 startActivity(Intent(this, HomepageMainActivity::class.java))
@@ -23,6 +22,6 @@ class SplashActivity : AppCompatActivity() {
             }
 
             finish()
-        }, 2000) // Delay 2 detik biar ada waktu liat logo
+        }, 2000)
     }
 }
