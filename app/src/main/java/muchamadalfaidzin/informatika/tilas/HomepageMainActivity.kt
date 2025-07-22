@@ -61,7 +61,10 @@ class HomepageMainActivity : AppCompatActivity() {
         }
 
         findViewById<LinearLayout>(R.id.nav_cart).setOnClickListener {
-            startActivity(Intent(this, CartActivity::class.java))
+            startActivity(Intent(this, ShoppingBagActivity::class.java))
         }
+
+        }
+
     }
-}
+
