@@ -1,43 +1,36 @@
 package muchamadalfaidzin.informatika.tilas
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+/*import com.google.firebase.auth.FirebaseAuth*/
 
 class SettingsActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        val sharedPref = getSharedPreferences("tilas_pref", MODE_PRIVATE)
-
+        // Tombol Back
         val btnBack = findViewById<ImageView>(R.id.btnBack)
         btnBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        val tvLogout = findViewById<TextView>(R.id.tvLogout)
-        tvLogout.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Apakah anda yakin ingin keluar?")
-                .setPositiveButton("OK") { _, _ ->
-                    // Hapus data login saat user benar-benar logout
-                    with(sharedPref.edit()) {
-                        clear()
-                        apply()
-                    }
+        // Tombol Sign Out
+        val btnSignOut = findViewById<TextView>(R.id.btnSignOut)
+        btnSignOut.setOnClickListener {
+            // clear session
+            val sharedPref = getSharedPreferences("user_session", MODE_PRIVATE)
+            sharedPref.edit().clear().apply()
 
-                    val intent = Intent(this, LandPageActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
-                    finish()
-                }
-                .setNegativeButton("Batal", null)
-                .show()
+            // balik ke LandPage
+            val intent = Intent(this, LandPageActivity::class.java)
+            startActivity(intent)
+            finish()
         }
+
     }
 }
