@@ -158,6 +158,26 @@
                     app:tint="@color/black" />
             </LinearLayout>
 
+            <!-- Favorite -->
+            <LinearLayout
+                android:id="@+id/nav_favorite"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/heart2"
+                    app:tint="@color/black" />
+            </LinearLayout>
+
             <!-- Profile -->
             <LinearLayout
                 android:id="@+id/nav_profile"
@@ -178,8 +198,31 @@
                     app:tint="@color/black" />
             </LinearLayout>
 
+            <!-- Cart -->
+            <LinearLayout
+                android:id="@+id/nav_cart"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
 
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/handbag"
+                    app:tint="@color/black" />
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/tvLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
