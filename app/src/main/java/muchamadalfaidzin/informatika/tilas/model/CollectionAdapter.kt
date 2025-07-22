@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import muchamadalfaidzin.informatika.tilas.R
 import muchamadalfaidzin.informatika.tilas.model.CollectionItem
@@ -16,6 +17,7 @@ class CollectionAdapter(private val items: List<CollectionItem>) :
         val ivImage: ImageView = itemView.findViewById(R.id.ivCollectionImage)
         val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
         val tvHarga: TextView = itemView.findViewById(R.id.tvHarga)
+        val btnLove: ImageView = itemView.findViewById(R.id.btnLove) // <-- Tambah ini
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,6 +31,11 @@ class CollectionAdapter(private val items: List<CollectionItem>) :
         holder.ivImage.setImageResource(item.imageResId)
         holder.tvTitle.text = item.title
         holder.tvHarga.text = item.price
+
+        // Listener tombol love
+        holder.btnLove.setOnClickListener {
+            Toast.makeText(holder.itemView.context, "${item.title} disukai!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int = items.size

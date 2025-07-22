@@ -34,5 +34,6 @@ class ShirtBlousesActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             startActivity(Intent(this, HomepageMainActivity::class.java))
         }
+
     }
 }

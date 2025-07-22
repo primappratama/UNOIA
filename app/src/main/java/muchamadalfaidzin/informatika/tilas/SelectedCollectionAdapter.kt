@@ -64,5 +64,6 @@ class SelectedCollectionAdapter(private val collectionList: List<CollectionItem>
                 // Tambahkan koleksi lainnya di sini jika perlu
             }
         }
+
     }
 }

@@ -67,24 +67,6 @@ class ProfileActivity : AppCompatActivity() {
         }
 
 
-        /*val tvLogout = findViewById<TextView>(R.id.tvLogout)
-        tvLogout?.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Apakah anda yakin ingin keluar?")
-                .setPositiveButton("OK") { _, _ ->
-                    with(sharedPref.edit()) {
-                        clear()
-                        apply()
-                    }
 
-                    val intent = Intent(this, LandPageActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
-                    finish()
-                }
-                .setNegativeButton("Batal", null)
-                .show()
-        }*/
     }
 }
