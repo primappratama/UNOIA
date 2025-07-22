@@ -184,7 +184,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/user_02active"
                     app:tint="@color/black" />
             </LinearLayout>
 
