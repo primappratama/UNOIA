@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="12dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F9F9F9"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tvItemName"
+        android:text="Item Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/monumentextended"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvItemDesc"
+        android:text="Item Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/helvetica"
+        android:textColor="#555555"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvItemStock"
+        android:text="Stock: 0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/helvetica"
+        android:textSize="14sp"
+        android:textColor="#777777" />
+</LinearLayout>

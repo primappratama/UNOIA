@@ -123,7 +123,7 @@
             android:backgroundTint="#000000"
             android:fontFamily="@font/helvetica_light"
             android:scrollbarSize="13dp"
-            android:layout_marginBottom="13dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <!-- Description -->
         <TextView
@@ -139,7 +139,6 @@
             android:layout_height="120dp"
             android:hint="PRODUCT DESCRIPTION"
             android:background="@null"
-            android:paddingStart="0dp"
             android:textColorHint="#999999"
             android:textColor="@color/black"
             android:fontFamily="@font/helvetica_light"
@@ -161,4 +160,3 @@
             app:cornerRadius="0dp" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
-
