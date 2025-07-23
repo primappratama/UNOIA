@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Judul -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD PRODUCT"
+            android:textSize="20sp"
+            android:fontFamily="@font/monumentextended"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Upload Photos -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/grey"
+            android:layout_marginBottom="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgUpload"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="75dp"
+                android:src="@drawable/ic_add" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPLOAD PHOTOS"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/monumentextended"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:layout_gravity="center_horizontal"/>
+        </FrameLayout>
+
+        <!-- Product Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRODUCT NAME"
+            android:textSize="12sp"
+            android:fontFamily="@font/monumentextended"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/etProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PRODUCT NAME"
+            android:background="@null"
+            android:textColorHint="#999999"
+            android:textColor="@color/black"
+            android:fontFamily="@font/helvetica_light"
+            android:textSize="13dp"
+            android:paddingVertical="8dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Price -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRICE"
+            android:textSize="12sp"
+            android:fontFamily="@font/monumentextended_regular"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IDR XXX.XXX"
+            android:background="@null"
+            android:textSize="13dp"
+            android:inputType="number"
+            android:textColorHint="#999999"
+            android:textColor="@color/black"
+            android:fontFamily="@font/monumentextended_regular"
+            android:paddingVertical="8dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Color -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COLOUR"
+            android:textSize="13sp"
+            android:fontFamily="@font/monumentextended_regular"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/etColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="COLOUR"
+            android:background="@null"
+            android:textColorHint="#999999"
+            android:textColor="@color/black"
+            android:fontFamily="@font/helvetica_light"
+            android:textSize="13dp"
+            android:paddingVertical="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Size -->
+        <Spinner
+            android:id="@+id/spinnerSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:popupBackground="@color/white"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/helvetica_light"
+            android:scrollbarSize="13dp"
+            android:layout_marginBottom="13dp"/>
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRODUCT DESCRIPTION"
+            android:textSize="12sp"
+            android:fontFamily="@font/monumentextended_regular"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="PRODUCT DESCRIPTION"
+            android:background="@null"
+            android:paddingStart="0dp"
+            android:textColorHint="#999999"
+            android:textColor="@color/black"
+            android:fontFamily="@font/helvetica_light"
+            android:textSize="13dp"
+            android:gravity="top"
+            android:padding="8dp"/>
+
+        <!-- Submit Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="ADD PRODUCT"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:textSize="14sp"
+            android:fontFamily="@font/monumentextended_regular"
+            android:layout_marginTop="24dp"
+            app:cornerRadius="0dp" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
