@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import muchamadalfaidzin.informatika.tilas.R
 import muchamadalfaidzin.informatika.tilas.model.CollectionItem
 
-class CollectionAdapter(private val items: List<CollectionItem>) :
+class CollectionAdapter(private val items: MutableList<CollectionItem>) :
     RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivImage: ImageView = itemView.findViewById(R.id.ivCollectionImage)
         val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
         val tvHarga: TextView = itemView.findViewById(R.id.tvHarga)
-        val btnLove: ImageView = itemView.findViewById(R.id.btnLove) // <-- Tambah ini
+        val btnLove: ImageView = itemView.findViewById(R.id.btnLove)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,11 +32,16 @@ class CollectionAdapter(private val items: List<CollectionItem>) :
         holder.tvTitle.text = item.title
         holder.tvHarga.text = item.price
 
-        // Listener tombol love
         holder.btnLove.setOnClickListener {
             Toast.makeText(holder.itemView.context, "${item.title} disukai!", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun getItemCount(): Int = items.size
+
+    fun addItem(item: CollectionItem) {
+        items.add(item)
+        notifyItemInserted(items.size - 1)
+    }
 }
+

@@ -20,13 +20,27 @@ class ShirtBlousesActivity : AppCompatActivity() {
 
         rvShirtBlouses = findViewById(R.id.rvShirtBlouses)
 
-        val list = listOf(
-            CollectionItem(R.drawable.shirt1, "SHIRT & BLOUSES", "Rp199.000"),
-            CollectionItem(R.drawable.shirt2, "CASUAL BLOUSE", "Rp259.000"),
-            CollectionItem(R.drawable.shirt1, "FORMAL BLOUSE", "Rp299.000")
+        val defaultList = mutableListOf(
+            CollectionItem(R.drawable.shirt1, null, "SHIRT & BLOUSES", "Rp199.000"),
+            CollectionItem(R.drawable.shirt2, null, "CASUAL BLOUSE", "Rp259.000"),
+            CollectionItem(R.drawable.shirt1, null, "FORMAL BLOUSE", "Rp299.000")
         )
 
-        adapter = CollectionAdapter(list)
+        val productName = intent.getStringExtra("productName")
+        val productPrice = intent.getStringExtra("productPrice")
+        val productImageUri = intent.getStringExtra("productImage")
+
+        if (productName != null && productPrice != null && productImageUri != null) {
+            defaultList.add(
+                CollectionItem(
+                    imageUri = productImageUri,
+                    title = productName,
+                    price = "Rp$productPrice"
+                )
+            )
+        }
+
+        adapter = CollectionAdapter(defaultList)
         rvShirtBlouses.layoutManager = GridLayoutManager(this, 2)
         rvShirtBlouses.adapter = adapter
 
@@ -34,6 +48,5 @@ class ShirtBlousesActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             startActivity(Intent(this, HomepageMainActivity::class.java))
         }
-
     }
 }
